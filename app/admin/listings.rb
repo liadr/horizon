@@ -1,4 +1,6 @@
 ActiveAdmin.register Listing do
+
+ permit_params :warehouse_id, :price, :sqft_available, :start_date, :end_date, :status
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
