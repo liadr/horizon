@@ -19,7 +19,7 @@
       <% @reviews.each do |review| %>
       <tr>
         <td><%= review.user.email %></td>
-        <td><%= review.warehouse_id %></td>
+        <td><%= review.warehouse.id %></td>
         <td><%= review.body %></td>
         <td><%= review.num_stars %></td>
         <td>
