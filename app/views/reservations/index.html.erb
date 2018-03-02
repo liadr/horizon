@@ -17,7 +17,7 @@
 
       <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.user_id %></td>
+        <td><%= reservation.user.email %></td>
         <td><%= reservation.listing_id %></td>
         <td><%= reservation.status %></td>
         <td>
