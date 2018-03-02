@@ -1,6 +1,9 @@
 class Warehouse < ApplicationRecord
   # Direct associations
 
+  has_many   :reviews,
+             :dependent => :destroy
+
   has_many   :listings,
              :dependent => :destroy
 
