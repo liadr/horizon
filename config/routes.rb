@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Reply resource:
+  # CREATE
+  get "/replies/new", :controller => "replies", :action => "new"
+  post "/create_reply", :controller => "replies", :action => "create"
+
+  # READ
+  get "/replies", :controller => "replies", :action => "index"
+  get "/replies/:id", :controller => "replies", :action => "show"
+
+  # UPDATE
+  get "/replies/:id/edit", :controller => "replies", :action => "edit"
+  post "/update_reply/:id", :controller => "replies", :action => "update"
+
+  # DELETE
+  get "/delete_reply/:id", :controller => "replies", :action => "destroy"
+  #------------------------------
+
   # Routes for the Review resource:
   # CREATE
   get "/reviews/new", :controller => "reviews", :action => "new"
