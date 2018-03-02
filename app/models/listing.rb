@@ -5,6 +5,8 @@ class Listing < ApplicationRecord
 
   # Validations
 
+  validates :start_date, :presence => true
+
   validates :status, :presence => true
 
 end
