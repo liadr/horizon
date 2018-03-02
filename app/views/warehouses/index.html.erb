@@ -23,7 +23,7 @@
 
       <% @warehouses.each do |warehouse| %>
       <tr>
-        <td><%= warehouse.user_id %></td>
+        <td><%= warehouse.user.email %></td>
         <td><%= warehouse.state_id %></td>
         <td><%= warehouse.name %></td>
         <td><%= warehouse.sqft %></td>
