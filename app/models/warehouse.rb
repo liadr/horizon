@@ -1,6 +1,11 @@
 class Warehouse < ApplicationRecord
   # Direct associations
 
+  belongs_to :city,
+             :class_name => "State",
+             :foreign_key => "state_id",
+             :counter_cache => true
+
   belongs_to :user
 
   # Indirect associations
