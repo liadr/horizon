@@ -1,6 +1,8 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  belongs_to :warehouse
+
   has_many   :reservations,
              :dependent => :destroy
 
