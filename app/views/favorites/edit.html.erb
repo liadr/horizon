@@ -33,7 +33,7 @@
           Warehouse
         </label>
 
-        <input type="text" id="warehouse_id" name="warehouse_id" placeholder="Warehouse" class="form-control" value="<%= @favorite.warehouse_id %>">
+        <%= select_tag(:warehouse_id, options_from_collection_for_select(Warehouse.all, :id, :id, @favorite.warehouse_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
