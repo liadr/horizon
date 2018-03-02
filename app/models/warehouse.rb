@@ -5,6 +5,8 @@ class Warehouse < ApplicationRecord
 
   # Validations
 
+  validates :staffed, :presence => true
+
   validates :staffed, :inclusion => { :in => [ 'Yes', 'No' ]  }
 
   validates :storage_methods, :presence => true
