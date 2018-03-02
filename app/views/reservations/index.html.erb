@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Reservations
+    <a href="/reservations/new" class="btn btn-lg btn-success">New Reservation</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Listing</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.user_id %></td>
+        <td><%= reservation.listing_id %></td>
+        <td><%= reservation.status %></td>
+        <td>
+          <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
+          <a href="/reservations/<%= reservation.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_reservation/<%= reservation.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
