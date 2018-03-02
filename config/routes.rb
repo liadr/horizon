@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Warehouse resource:
+  # CREATE
+  get "/warehouses/new", :controller => "warehouses", :action => "new"
+  post "/create_warehouse", :controller => "warehouses", :action => "create"
+
+  # READ
+  get "/warehouses", :controller => "warehouses", :action => "index"
+  get "/warehouses/:id", :controller => "warehouses", :action => "show"
+
+  # UPDATE
+  get "/warehouses/:id/edit", :controller => "warehouses", :action => "edit"
+  post "/update_warehouse/:id", :controller => "warehouses", :action => "update"
+
+  # DELETE
+  get "/delete_warehouse/:id", :controller => "warehouses", :action => "destroy"
+  #------------------------------
+
   # Routes for the State resource:
   # CREATE
   get "/states/new", :controller => "states", :action => "new"

@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h3>Warehouse #<%= @warehouse.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @warehouse.user_id %></dd>
+
+      <dt>State</dt>
+      <dd><%= @warehouse.state_id %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @warehouse.name %></dd>
+
+      <dt>Sqft</dt>
+      <dd><%= @warehouse.sqft %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @warehouse.address %></dd>
+
+      <dt>Staffed</dt>
+      <dd><%= @warehouse.staffed %></dd>
+
+      <dt>Storage methods</dt>
+      <dd><%= @warehouse.storage_methods %></dd>
+
+      <dt>Total stars</dt>
+      <dd><%= @warehouse.total_stars %></dd>
+
+      <dt>Num reviews</dt>
+      <dd><%= @warehouse.num_reviews %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/warehouses" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/warehouses/<%= @warehouse.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_warehouse/<%= @warehouse.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
