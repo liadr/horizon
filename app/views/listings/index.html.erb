@@ -20,7 +20,7 @@
 
       <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.warehouse_id %></td>
+        <td><%= listing.warehouse.id %></td>
         <td><%= listing.price %></td>
         <td><%= listing.sqft_available %></td>
         <td><%= listing.start_date %></td>
