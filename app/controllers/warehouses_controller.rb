@@ -6,6 +6,10 @@ class WarehousesController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
+    @review = Review.new
+    @listing = Listing.new
+    @photo = Photo.new
     @warehouse = Warehouse.find(params[:id])
 
     render("warehouses/show.html.erb")

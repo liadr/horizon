@@ -51,6 +51,92 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_warehouse" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for state_id -->
+      <input type="hidden" name="state_id" value="<%= @state.id %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <textarea id="name" name="name" placeholder="Name" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for sqft -->
+      <div class="form-group">
+        <label for="sqft" class="control-label">
+          Sqft
+        </label>
+
+        <input type="text" id="sqft" name="sqft" placeholder="Sqft" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for staffed -->
+      <div class="form-group">
+        <label for="staffed" class="control-label">
+          Staffed
+        </label>
+
+        <input type="text" id="staffed" name="staffed" placeholder="Staffed" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for storage_methods -->
+      <div class="form-group">
+        <label for="storage_methods" class="control-label">
+          Storage methods
+        </label>
+
+        <input type="text" id="storage_methods" name="storage_methods" placeholder="Storage methods" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for total_stars -->
+      <div class="form-group">
+        <label for="total_stars" class="control-label">
+          Total stars
+        </label>
+
+        <input type="text" id="total_stars" name="total_stars" placeholder="Total stars" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for num_reviews -->
+      <div class="form-group">
+        <label for="num_reviews" class="control-label">
+          Num reviews
+        </label>
+
+        <input type="text" id="num_reviews" name="num_reviews" placeholder="Num reviews" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Warehouse
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
