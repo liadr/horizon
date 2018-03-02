@@ -19,7 +19,7 @@
       <tr>
         <td><%= reply.body %></td>
         <td><%= reply.user.email %></td>
-        <td><%= reply.review_id %></td>
+        <td><%= reply.review.user_id %></td>
         <td>
           <a href="/replies/<%= reply.id %>" class="btn btn-primary">Show</a>
           <a href="/replies/<%= reply.id %>/edit" class="btn btn-warning">Edit</a>
