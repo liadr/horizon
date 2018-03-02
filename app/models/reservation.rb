@@ -5,4 +5,6 @@ class Reservation < ApplicationRecord
 
   # Validations
 
+  validates :status, :inclusion => { :in => [ 'Approved', 'Declined', 'Pending' ]  }
+
 end
