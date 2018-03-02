@@ -17,7 +17,7 @@
 
       <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.warehouse_id %></td>
+        <td><%= photo.warehouse.id %></td>
         <td><%= photo.image %></td>
         <td><%= photo.caption %></td>
         <td>
