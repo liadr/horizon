@@ -48,8 +48,6 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-
-    @reservation.user_id = params[:user_id]
     @reservation.listing_id = params[:listing_id]
     @reservation.status = params[:status]
 
