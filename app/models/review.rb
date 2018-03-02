@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_many   :replies,
+             :dependent => :destroy
+
   belongs_to :warehouse
 
   belongs_to :user,
