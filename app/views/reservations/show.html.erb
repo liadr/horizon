@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @reservation.user_id %></dd>
+      <dd>
+        <% if @reservation.user.present? %>
+          <a href="/users/<%= @reservation.user_id %>">
+            <%= @reservation.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Listing</dt>
-      <dd><%= @reservation.listing_id %></dd>
+      <dd>
+        <% if @reservation.listing.present? %>
+          <a href="/listings/<%= @reservation.listing_id %>">
+            <%= @reservation.listing.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Status</dt>
       <dd><%= @reservation.status %></dd>

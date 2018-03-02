@@ -17,7 +17,13 @@
 
       <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.warehouse.id %></td>
+        <td>
+          <% if photo.warehouse.present? %>
+            <a href="/warehouses/<%= photo.warehouse.id %>">
+              <%= photo.warehouse.id %>
+            </a>
+          <% end %>
+        </td>
         <td><img src='<%= photo.image %>' class='img-responsive'></td>
         <td><%= photo.caption %></td>
         <td>

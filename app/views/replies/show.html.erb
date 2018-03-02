@@ -9,10 +9,22 @@
       <dd><%= @reply.body %></dd>
 
       <dt>User</dt>
-      <dd><%= @reply.user_id %></dd>
+      <dd>
+        <% if @reply.user.present? %>
+          <a href="/users/<%= @reply.user_id %>">
+            <%= @reply.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Review</dt>
-      <dd><%= @reply.review_id %></dd>
+      <dd>
+        <% if @reply.review.present? %>
+          <a href="/reviews/<%= @reply.review_id %>">
+            <%= @reply.review.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

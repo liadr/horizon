@@ -17,8 +17,20 @@
 
       <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.user.email %></td>
-        <td><%= reservation.listing.created_at %></td>
+        <td>
+          <% if reservation.user.present? %>
+            <a href="/users/<%= reservation.user.id %>">
+              <%= reservation.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if reservation.listing.present? %>
+            <a href="/listings/<%= reservation.listing.id %>">
+              <%= reservation.listing.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= reservation.status %></td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>

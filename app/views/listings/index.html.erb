@@ -20,7 +20,13 @@
 
       <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.warehouse.id %></td>
+        <td>
+          <% if listing.warehouse.present? %>
+            <a href="/warehouses/<%= listing.warehouse.id %>">
+              <%= listing.warehouse.id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= listing.price %></td>
         <td><%= listing.sqft_available %></td>
         <td><%= listing.start_date %></td>

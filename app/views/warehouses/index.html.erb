@@ -32,8 +32,20 @@
 
       <% @warehouses.each do |warehouse| %>
       <tr>
-        <td><%= warehouse.user.email %></td>
-        <td><%= warehouse.city.name %></td>
+        <td>
+          <% if warehouse.user.present? %>
+            <a href="/users/<%= warehouse.user.id %>">
+              <%= warehouse.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if warehouse.city.present? %>
+            <a href="/states/<%= warehouse.city.id %>">
+              <%= warehouse.city.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= warehouse.name %></td>
         <td><%= warehouse.sqft %></td>
         <td><%= warehouse.address %></td>
