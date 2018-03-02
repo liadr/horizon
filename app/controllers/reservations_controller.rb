@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.page(params[:page]).per(10)
 
     render("reservations/index.html.erb")
   end

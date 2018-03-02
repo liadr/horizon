@@ -1,6 +1,6 @@
 class RepliesController < ApplicationController
   def index
-    @replies = Reply.all
+    @replies = Reply.page(params[:page]).per(10)
 
     render("replies/index.html.erb")
   end
