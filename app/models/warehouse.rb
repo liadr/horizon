@@ -5,6 +5,8 @@ class Warehouse < ApplicationRecord
 
   # Validations
 
+  validates :name, :presence => true
+
   validates :sqft, :presence => true
 
   validates :sqft, :numericality => { :greater_than => 0 }
