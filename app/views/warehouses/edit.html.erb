@@ -33,7 +33,7 @@
           State
         </label>
 
-        <input type="text" id="state_id" name="state_id" placeholder="State" class="form-control" value="<%= @warehouse.state_id %>">
+        <%= select_tag(:state_id, options_from_collection_for_select(State.all, :id, :name, @warehouse.state_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for name -->
