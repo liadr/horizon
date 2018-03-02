@@ -5,6 +5,8 @@ class Listing < ApplicationRecord
 
   # Validations
 
+  validates :sqft_available, :presence => true
+
   validates :start_date, :presence => true
 
   validates :status, :presence => true
