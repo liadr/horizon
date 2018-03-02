@@ -5,4 +5,6 @@ class Warehouse < ApplicationRecord
 
   # Validations
 
+  validates :storage_methods, :inclusion => { :in => [ 'Double Stacked', 'Single Stacked' ]  }
+
 end
