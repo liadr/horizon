@@ -1,6 +1,7 @@
 class RepliesController < ApplicationController
   def index
-    @replies = Reply.page(params[:page]).per(10)
+    @q = Reply.ransack(params[:q])
+    @replies = @q.result(:distinct => true).includes(:user, :review).page(params[:page]).per(10)
 
     render("replies/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class WarehousesController < ApplicationController
   def index
-    @warehouses = Warehouse.page(params[:page]).per(10)
+    @q = Warehouse.ransack(params[:q])
+    @warehouses = @q.result(:distinct => true).includes(:user, :city, :photos, :listings, :reviews, :favorites).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@warehouses.where.not(:address_latitude => nil)) do |warehouse, marker|
       marker.lat warehouse.address_latitude
       marker.lng warehouse.address_longitude

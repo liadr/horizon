@@ -10,7 +10,8 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservations = Reservation.page(params[:page]).per(10)
+    @q = Reservation.ransack(params[:q])
+    @reservations = @q.result(:distinct => true).includes(:user, :listing).page(params[:page]).per(10)
 
     render("reservations/index.html.erb")
   end
