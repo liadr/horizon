@@ -33,10 +33,7 @@ class Warehouse < ApplicationRecord
   has_many   :photos,
              :dependent => :destroy
 
-  belongs_to :city,
-             :class_name => "State",
-             :foreign_key => "state_id",
-             :counter_cache => true
+  belongs_to :state
 
   belongs_to :user
 

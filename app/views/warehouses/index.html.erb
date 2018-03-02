@@ -98,8 +98,8 @@
     </div>
 
 <div class="form-group">
-      <%= f.label :city_name_cont, "State name contains" %>
-      <%= f.text_field :city_name_cont, :class => "form-control", :placeholder => "State name contains" %>
+      <%= f.label :state_name_cont, "State name contains" %>
+      <%= f.text_field :state_name_cont, :class => "form-control", :placeholder => "State name contains" %>
     </div>
 
 <div class="form-group">
@@ -187,9 +187,9 @@
           <% end %>
         </td>
         <td>
-          <% if warehouse.city.present? %>
-            <a href="/states/<%= warehouse.city.id %>">
-              <%= warehouse.city.name %>
+          <% if warehouse.state.present? %>
+            <a href="/states/<%= warehouse.state.id %>">
+              <%= warehouse.state.name %>
             </a>
           <% end %>
         </td>
