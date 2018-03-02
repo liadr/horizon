@@ -5,6 +5,8 @@ class Photo < ApplicationRecord
 
   # Validations
 
+  validates :image, :uniqueness => { :scope => [:warehouse_id] }
+
   validates :image, :presence => true
 
 end
