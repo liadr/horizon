@@ -33,7 +33,7 @@
           Warehouse
         </label>
 
-        <input type="text" id="warehouse_id" name="warehouse_id" placeholder="Warehouse" class="form-control" value="<%= @review.warehouse_id %>">
+        <%= select_tag(:warehouse_id, options_from_collection_for_select(Warehouse.all, :id, :id, @review.warehouse_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for body -->
