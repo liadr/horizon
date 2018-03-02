@@ -1,6 +1,11 @@
 class WarehousesController < ApplicationController
   def index
     @warehouses = Warehouse.all
+    @location_hash = Gmaps4rails.build_markers(@warehouses.where.not(:address_latitude => nil)) do |warehouse, marker|
+      marker.lat warehouse.address_latitude
+      marker.lng warehouse.address_longitude
+      marker.infowindow "<h5><a href='/warehouses/#{warehouse.id}'>#{warehouse.id}</a></h5><small>#{warehouse.address_formatted_address}</small>"
+    end
 
     render("warehouses/index.html.erb")
   end
