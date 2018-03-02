@@ -1,4 +1,6 @@
 ActiveAdmin.register Warehouse do
+
+ permit_params :user_id, :state_id, :name, :sqft, :address, :staffed, :storage_methods, :total_stars, :num_reviews
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
