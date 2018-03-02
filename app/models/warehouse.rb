@@ -5,6 +5,8 @@ class Warehouse < ApplicationRecord
 
   # Validations
 
+  validates :name, :uniqueness => { :scope => [:user_id] }
+
   validates :name, :presence => true
 
   validates :sqft, :presence => true
