@@ -5,6 +5,8 @@ class Listing < ApplicationRecord
 
   # Validations
 
+  validates :end_date, :presence => true
+
   validates :price, :presence => true
 
   validates :sqft_available, :presence => true
