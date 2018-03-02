@@ -1,6 +1,9 @@
 class Warehouse < ApplicationRecord
   # Direct associations
 
+  has_many   :photos,
+             :dependent => :destroy
+
   belongs_to :city,
              :class_name => "State",
              :foreign_key => "state_id",
