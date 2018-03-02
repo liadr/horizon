@@ -22,8 +22,11 @@
         <td><%= reservation.status %></td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
-          <a href="/reservations/<%= reservation.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_reservation/<%= reservation.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == reservation.user %>
+            <a href="/reservations/<%= reservation.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_reservation/<%= reservation.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

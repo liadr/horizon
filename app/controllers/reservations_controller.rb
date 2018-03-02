@@ -1,4 +1,14 @@
 class ReservationsController < ApplicationController
+  before_action :current_user_must_be_reservation_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_reservation_user
+    reservation = Reservation.find(params[:id])
+
+    unless current_user == reservation.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @reservations = Reservation.all
 
