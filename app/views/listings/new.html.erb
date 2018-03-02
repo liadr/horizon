@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @listing.errors.any? %>
+  <% @listing.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Listing</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_listing" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for warehouse_id -->
+      <div class="form-group">
+        <label for="warehouse_id" class="control-label">
+          Warehouse
+        </label>
+
+        <input type="text" id="warehouse_id" name="warehouse_id" placeholder="Warehouse" class="form-control" value="<%= @listing.warehouse_id %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @listing.price %>">
+      </div>
+
+      <!-- Label and input for sqft_available -->
+      <div class="form-group">
+        <label for="sqft_available" class="control-label">
+          Sqft available
+        </label>
+
+        <input type="text" id="sqft_available" name="sqft_available" placeholder="Sqft available" class="form-control" value="<%= @listing.sqft_available %>">
+      </div>
+
+      <!-- Label and input for start_date -->
+      <div class="form-group">
+        <label for="start_date" class="control-label">
+          Start date
+        </label>
+
+        <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @listing.start_date %>">
+      </div>
+
+      <!-- Label and input for end_date -->
+      <div class="form-group">
+        <label for="end_date" class="control-label">
+          End date
+        </label>
+
+        <input type="text" id="end_date" name="end_date" placeholder="End date" class="form-control" value="<%= @listing.end_date %>">
+      </div>
+
+      <!-- Label and input for status -->
+      <div class="form-group">
+        <label for="status" class="control-label">
+          Status
+        </label>
+
+        <input type="text" id="status" name="status" placeholder="Status" class="form-control" value="<%= @listing.status %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Listing
+      </button>
+      or
+      <a href="/listings">Cancel</a>
+    </form>
+  </div>
+</div>
